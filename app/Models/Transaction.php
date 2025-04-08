@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Casts\MoneyCast;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -31,9 +32,21 @@ class Transaction extends Model
         'delivery_type'
     ];
     protected $casts = [
+        'total_amount' => MoneyCast::class,
         'started_at' => 'datetime',
         'ended_at' => 'datetime',
     ];
+
+    // Generate a unique trx_id
+    public function generateUniqueTrxId()
+    {
+        $prefix = 'RFY';
+        do{
+            $randomString = $prefix. mt_rand(1000,9999);
+        }while (self::where('trx_id', $randomString)->exists());
+
+        return $randomString;
+    }
 
     public function product():BelongsTo
     {

@@ -54,7 +54,7 @@
 
 ```bash
 # Clone repo ini
-git clone https://github.com/username/rentify.git
+git clone https://github.com/Guruhg19/Rentify-Web-App-for-Renting-Electronic-Goods.git
 
 # Masuk ke folder project
 cd rentify

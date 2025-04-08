@@ -6,7 +6,7 @@
 
 **Rentify** adalah aplikasi sewa barang elektronik berbasis web yang dibangun menggunakan **Laravel 11**, **Filament v3**, dan **MySQL**. Proyek ini merupakan bagian dari pembelajaran di kelas online:
 
-> **Web Development Laravel 11, Filament, MySQL: Sewa Barang App**  
+> **BWA - Web Development Laravel 11, Filament, MySQL: Sewa Barang App**  
 
 ## 📚 Deskripsi Proyek
 

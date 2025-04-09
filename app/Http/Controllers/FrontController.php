@@ -115,7 +115,41 @@ class FrontController extends Controller
         });
 
         return redirect()->route('front.success.booking', ['transaction' => $bookingTransactionId]);
-
     }
+
+    public function success_booking(Transaction $transaction){
+        return view('front.success_booking',compact('transaction'));
+    }
+
+    public function transactions(){
+        return view('front.transactions');
+    }
+
+    public function transactions_details(Request $request){
+        $request->validate([
+            'trx_id' => 'required|string|max:255',
+            'phone_number' => 'required|string|max:255',
+        ]);
+        $trx_id = $request->input('trx_id');
+        $phone_number = $request->input('phone_number');
+
+        $details = Transaction::with(['product', 'store'])
+            ->where('trx_id', $trx_id)
+            ->where('phone_number', $phone_number)
+            ->first();
+
+            if(!$details){
+                return redirect()->back()->withErrors(['error' => 'Transaction Not Found']);
+            }
+
+            $ppn = 0.11;
+            $insurrance = 900000;
+            $totalPpn = $details->product->price * $ppn;
+            $duration = $details->duration;
+            $subTotal = $details->product->price * $duration;
+
+            return view('front.transaction_details',compact('details','totalPpn','subTotal','insurrance'));
+    }
+    
 
 }

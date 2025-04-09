@@ -100,5 +100,7 @@ function toggleRequiredOptions() {
         // addressTextarea.required = true;
         addressTextarea.value = '';
         deliveryType.value = 'home_delivery';
+        document.getElementById('storeIdHidden').value = 1;
+        // document.querySelector('input[name="store_id"]').value = 1;
     }
 }

@@ -215,10 +215,10 @@
 			<div class="bg-white/50 backdrop-blur-sm absolute w-full h-full"></div>
 			<div class="flex items-center justify-between p-5 relative z-10">
 				<div class="flex flex-col gap-1 w-fit">
-					<p class="font-bold text-xl leading-[30px]">Rp 1.250.000</p>
-					<p class="text-sm leading-[21px]">/day</p>
+					<p class="font-bold text-xl leading-[30px]">Rp {{ number_format($product->price,0,',','.')  }} / Day</p>
+					{{-- <p class="text-sm leading-[21px]"> /day</p> --}}
 				</div>
-				<a href="booking.html" class="rounded-full p-[12px_24px] bg-[#FCCF2F] font-bold w-fit">Rent Now</a>
+				<a href="{{ route('front.booking',$product->slug) }}" class="rounded-full p-[12px_24px] bg-[#FCCF2F] font-bold w-fit">Rent Now</a>
 			</div>
 		</div>
 	</main>

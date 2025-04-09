@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link href="{{ asset('output.css') }}" rel="stylesheet" />
-		<link href="{{ asset('main.css') }}" rel="stylesheet" />
-		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-	</head>
-	<body>
+@extends('front.layouts/app')
+@section('title','Rentify')
+@section('content')
 		<main class="max-w-[640px] mx-auto min-h-screen flex flex-col relative has-[#Bottom-nav]:pb-[144px]">
 			<div id="Top-navbar" class="flex items-center justify-between pt-5 px-5">
 				<a href="{{ route('front.index') }}" class="flex shrink-0">
@@ -130,7 +122,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="check-booking.html">
+						<a href="{{ route('front.transactions') }}">
 							<div class="group flex flex-col items-center text-center gap-2 transition-all duration-300 hover:text-black text-[#9D9DAD]">
 								<div class="w-6 h-6 flex shrink-0">
 									<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -210,7 +202,13 @@
 			</div>
 		</main>
 
-		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+@endsection
+@push('after-styles')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+@endpush
+@push('after-script')
+    	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 		<script src="{{ asset('customjs/browse.js ')}}"></script>
-	</body>
-</html>
+@endpush
+
+

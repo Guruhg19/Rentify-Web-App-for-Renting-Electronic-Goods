@@ -60,7 +60,7 @@
 				<div class="bg-white/50 backdrop-blur-sm absolute w-full h-full"></div>
 				<ul class="flex items-center gap-3 justify-evenly p-5 relative z-10">
 					<li>
-						<a href="index.html">
+						<a href="{{ route('front.index') }}">
 							<div class="group flex flex-col items-center text-center gap-2 transition-all duration-300 hover:text-black text-[#9D9DAD]">
 								<div class="w-6 h-6 flex shrink-0">
 									<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -80,7 +80,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="">
+						<a href="{{ route('front.transactions') }}">
 							<div class="group flex flex-col items-center text-center gap-2 transition-all duration-300 hover:text-black">
 								<div class="w-6 h-6 flex shrink-0">
 									<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">

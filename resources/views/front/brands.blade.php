@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link href="{{ asset('output.css') }}" rel="stylesheet" />
-		<link href="{{ asset('main.css') }}" rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
-		rel="stylesheet" />
-</head>
-
-<body>
+@extends('front.layouts/app')
+@section('title','Choose Brands')
+@section('content')
 	<main class="max-w-[640px] mx-auto min-h-screen flex flex-col relative has-[#Bottom-nav]:pb-[144px]">
 		<div id="Top-navbar" class="flex items-center justify-between px-5 pt-5 w-full">
 			<a href="{{ url()->previous() }}">
@@ -44,6 +34,4 @@
 			</div>
 		</section>
 	</main>
-</body>
-
-</html>
+@endsection

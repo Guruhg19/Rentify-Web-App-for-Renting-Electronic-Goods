@@ -109,7 +109,7 @@ class TransactionResource extends Resource
 
                 TextColumn::make('total_amount')
                 ->numeric()
-                ->prefix('Rp'),
+                ->prefix('Rp '),
 
                 IconColumn::make('is_paid')
                 ->boolean()

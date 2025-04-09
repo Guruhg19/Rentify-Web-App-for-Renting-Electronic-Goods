@@ -65,6 +65,7 @@
 		<form method="POST" action="{{ route('front.booking.save',$product->slug) }}" class="flex flex-col gap-[30px] mt-[30px]">
             @csrf
             <input type="hidden" value="{{ $product->price }}" id="productPrice">
+            <input type="hidden" name="delivery_type" value="pickup" id="deliveryType">
             <input type="hidden" name="duration" id="duration" value="1" class="absolute -z-10 opacity-0 w-1" required />
 			<div class="flex items-center justify-between px-5">
 				<label for="days" class="font-semibold">How many days?</label>

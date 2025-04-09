@@ -38,7 +38,7 @@ class Transaction extends Model
     ];
 
     // Generate a unique trx_id
-    public function generateUniqueTrxId()
+    public static function generateUniqueTrxId()
     {
         $prefix = 'RFY';
         do{

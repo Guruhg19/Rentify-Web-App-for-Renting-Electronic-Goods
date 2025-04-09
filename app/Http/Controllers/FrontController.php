@@ -31,4 +31,8 @@ class FrontController extends Controller
         return view('front.gadgets',compact('brand','products'));
     }
 
+    public function details(Product $product){
+        return view('front.details',compact('product'));
+    }
+
 }

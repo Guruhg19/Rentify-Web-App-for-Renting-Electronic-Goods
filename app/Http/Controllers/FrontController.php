@@ -49,8 +49,20 @@ class FrontController extends Controller
     }
 
     public function checkout(Product $product){
-        $store_id = session('store_id');
-        dd($store_id);
+        $duration = session('duration');
+
+        $insurrance = 900000;
+        $ppn = 0.11;
+        $price = $product->price;
+
+        $subTotal = $price * $duration;
+        $totalPpn = $subTotal * $ppn;
+        $grandTotal = $subTotal + $totalPpn + $insurrance;
+        return view('front.checkout',compact('product','grandTotal','subTotal','totalPpn','insurrance'));
+    }
+
+    public function checkout_store(){
+        
     }
 
 }
